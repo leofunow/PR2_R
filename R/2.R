@@ -19,7 +19,6 @@ COVID_19_metadata$Mean_ills <- apply(X = data[, -(1:4)], # Данные
 COVID_19_metadata$Std_ills <- apply(X = data[, -(1:4)], # Данные
                                     MARGIN = 1,            # Измерения
                                     FUN = sd)            # Функция
-View(COVID_19_metadata)
 COVID_19_metadata <- COVID_19_metadata[, c(5,3,4,6:8)]
 View(COVID_19_metadata)
 
@@ -41,3 +40,8 @@ View(COVID19_dates)
 
 write.csv(COVID_19_metadata,"data_output/data_output.csv")
 
+install.packages('xlsx')
+library(xlsx)
+write.xlsx(COVID_19_metadata,"data_output/data_output.xlsx")
+
+write.table(COVID_19_metadata,"data_output/data_output.txt")
