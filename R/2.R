@@ -38,6 +38,8 @@ rownames(COVID19_dates) <- as.character(temp)
 rownames(COVID19_dates)
 View(COVID19_dates)
 
+dir.create("data_output", showWarnings = FALSE)
+
 write.csv(COVID_19_metadata,"data_output/data_output.csv")
 
 install.packages('xlsx')
